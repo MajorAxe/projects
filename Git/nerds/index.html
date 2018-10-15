@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
+      <link rel="stylesheet" href="css/style.css" type="text/css"/>
     <meta charset="utf-8">
     <title>Студия разработки Nёrds</title>
   </head>
   <body>
     <header class="main-header">
       <nav class="main-navigation">
-        <a class="main-header-logo">
+        <a class="main-header-logo" href="index.html">
           <img src="img/nerds-logo.svg" alt="Логотип студии Nёrds">
         </a>
         <ul class="site-navigation">
@@ -56,32 +57,107 @@
       <section class="about">
         <b>Мы - маленькая, но гордая дизайн-студия из Краснодара.</b>
         <p>Исповедуем принципы минимализма и чистоты. Ставим математический расчет превыше креатива. Работает не покладая рук, как роботы.</p>
+        <h3>Выполняем заказы на разработку</h3>
         <ul class="about-orders">
-          <li>
-            <h3>Выполняем заказы на разработку</h3>
-          </li>
           <li>Веб-сайтов любой сложности</li>
           <li>Мобильный приложений для IOS и Android</li>
           <li>Слайдшоу и видео для корпоративных презентаций</li>
         </ul>
+        <img src="img/about-nerds-logo.jpg">
+        <h3>С 2004 года любим точность во всем:</h3>
         <ul class="about-stats">
           <li>
-            <h3>С 2004 года любим точность во всем:</h3>
+            <p>
+              <b>146%</b><br>
+              Уровень самоотдачи
+            </p>
           </li>
           <li>
-            <b>146%</b>
-            <p>Уровень самоотдачи</p>
+            <p>
+              <b>100%</b><br>
+              Соблюдение сроков
+            </p>
           </li>
           <li>
-            <b>100%</b>
-            <p>Соблюдение сроков</p>
-          </li>
-          <li>
-            <b>50%</b>
-            <p>Минимальная предоплата</p>
+            <p>
+              <b>50%</b><br>
+              Минимальная предоплата
+            </p>
           </li>
         </ul>
       </section>
+
+      <section class="partners">
+        <ul class="partners-line-up">
+          <li>
+            <img src="img/partners-line-up.png" alt="Разделительная линия над партнёрами">
+          </li>
+          <li>
+            <img src="img/partner-logo-htmlacademy.png" alt="Лого HTMLAcademy">
+          </li>
+          <li>
+            <img src="img/partners-line-between.png" alt="Линия между логотипами патрнёров">
+          </li>
+          <li>
+            <img src="img/partners-logo-barbershop.png" alt="Лого Баршебершопа Бородинский">
+          </li>
+          <li>
+              <img src="img/partners-line-between.png" alt="Линия между логотипами патрнёров">
+            </li>
+          <li>
+            <img src="img/partners-logo-pink.png" alt="Лого Пинк">
+          </li>
+          <li>
+            <img src="img/partners-line-between.png" alt="Линия между логотипами патрнёров">
+          </li>
+          <li>
+            <img src="img/partners-logo-mishka.png" alt="Лого Мишки">
+          </li>
+          <li>
+            <img src="img/partners-line-up.png" alt="Разделительная линия под партнёрами">
+          </li>
+        </ul>
+      </section>
+
+      <article class="map">
+        <img src="img/nerds-map.jpg" alt="Расположение студии на карте">
+        <b>Nёrds design studio</b>
+        <p>191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 тел. +7 (812) 275-75-75</p>
+        <button type="button" name="Write us">Напишите нам</button>
+      </article>
+
+      <footer class="social">
+        <ul>
+          <li>
+            <a href="https://vk.com"><img src="img/vk-icon.png"></a>
+          </li>
+          <li>
+            <a href="https://facebook.com"><img src="img/fb-icon.png"></a>
+          </li>
+          <li>
+            <a href="https://instagram.com"><img src="img/insta-icon.png"></a>
+          </li>
+        </ul>
+        <b>Давайте дружить, это выгодно!</b>
+        <p>Скидка 10% для друзей из социальных сетей.</p>
+      </footer>
+
+      <header class="feedback">
+        <b>Напишите нам</b>
+        <form class="user" method="POST" action="https://echo.htmlacademy.ru">
+          <p>
+            <label>Ваше имя:</label>
+            <input id="user-name" type="text" name="name" placeholder="Александр">
+          </p>
+            <label>Ваш e-mail:</label>
+            <input id="user-email" type="text" name="email" placeholder="example@gmail.com">
+          </p>
+          <p>
+            <label>Текст письма:</label>
+            <input id="user-message" type="text" name="message" placeholder="В свободной форме">
+          </p>
+          <button type="submit">Отправить</button>
+      </header>
     </main>
   </body>
 </html>

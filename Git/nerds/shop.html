@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+      <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <meta charset="utf-8">
+    <title>Студия разработки Nёrds</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="main-navigation">
+        <a class="main-header-logo" href="index.html">
+          <img src="img/nerds-logo.svg" alt="Логотип студии Nёrds">
+        </a>
+        <ul class="site-navigation">
+          <li><a href="info.html">Студия</a></li>
+          <li><a href="clients.html">Клиенты</a></li>
+          <li><a href="shop.html">Магазин</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+        <ul>
+          <li>Корзина</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+
+      <h1>Магазин готовых шаблонов</h1>
+
+      <section>
+        <fieldset>
+          <legend>Стоимость:</legend>
+
+          <input id="price" type="range" min="0" max="15000">
+          <br>
+          <label>От</label>
+          <input id="price" type="text" name="price-range-min" placeholder="0">
+          <label>До</label>
+          <input id="price" type="text" name="price-range-max" placeholder="15 000">
+        </fieldset>
+
+        <fieldset>
+          <legend>Сетка:</legend>
+
+          <input type="radio" name="grid" id="grid-adaptive-filter" checked>
+          <label for="grid-adaptive-filter">Адаптивная</label><br>
+          <input type="radio" name="grid" id="grid-fix-filter">
+          <label for="grid-fix-filter">Фиксированная</label><br>
+          <input type="radio" name="grid" id="grid-rubber-filter">
+          <label for="grid-rubber-filter">Резиновая</label><br>
+        </fieldset>
+
+        <fieldset>
+          <legend>Особенности</legend>
+          <ul>
+            <li>
+              <input type="checkbox" name="slider" id="slider-filter" checked>
+              <label for="slider-filter">Слайдер</label>
+            </li>
+            <li>
+              <input type="checkbox" name="advantages" id="advantages-filter">
+              <label for="advantages-filter">Блок преимуществ</label>
+            </li>
+            <li>
+              <input type="checkbox" name="news" id="news-filter" checked>
+              <label for="news-filter">Новости</label>
+            </li>
+            <li>
+              <input type="checkbox" name="gallery" id="gallery-filter">
+              <label for="gallery-filter">Галерея</label>
+            </li>
+            <li>
+              <input type="checkbox" name="basket" id="basket-filter">
+              <label for="basket-filter">Корзина</label>
+            </li>
+          </ul>
+          
+        </fieldset>
+      </section>
+      
+
+
+      <footer class="map-and-social">
+        <article class="map">
+            <img src="img/nerds-map.jpg" alt="Расположение студии на карте">
+            <b>Nёrds design studio</b>
+            <p>191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 тел. +7 (812) 275-75-75</p>
+            <button type="button" name="Write us">Напишите нам</button>
+        </article>
+        <ul>
+          <li>
+            <a href="https://vk.com"><img src="img/vk-icon.png"></a>
+          </li>
+          <li>
+            <a href="https://facebook.com"><img src="img/fb-icon.png"></a>
+          </li>
+          <li>
+            <a href="https://instagram.com"><img src="img/insta-icon.png"></a>
+          </li>
+        </ul>
+        <b>Давайте дружить, это выгодно!</b>
+        <p>Скидка 10% для друзей из социальных сетей.</p>
+      </footer>
+    </main>
+  </body>
+</html>

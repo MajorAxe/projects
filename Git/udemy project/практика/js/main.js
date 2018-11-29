@@ -1,3 +1,33 @@
+let start = document.getElementById("start"); //кнопка "начать расчет"
+
+//блоки со значениями
+let budgetValue = document.getElementsByClassName("budget-value");
+let daybudgetValue = document.getElementsByClassName("daybudget-value");
+let dlevelValue = document.getElementsByClassName("dlevel-value");
+let budgetexpensesValueValue = document.getElementsByClassName("expenses-value");
+let optionalexpensesValue = document.getElementsByClassName("optionalexpenses-value");
+let incomeValue = document.getElementsByClassName("income-value");
+let monthsavingsValue = document.getElementsByClassName("monthsavings-value");
+let yearsavingsValue = document.getElementsByClassName("yearsavings-value");
+
+//поля input
+let expensesItem = document.getElementById("expenses-item");
+
+//кнопки
+let buttonApprove1 = document.getElementsByTagName("button")[0];
+let buttonApprove2 = document.getElementsByTagName("button")[1];
+let buttonCalculate = document.getElementsByTagName("button")[2];
+
+//поля ввода необязательных расходов
+let optionalexpensesItem = document.querySelectorAll(".optionalexpenses-item");
+
+//чекбокс
+let checkbox = document.querySelector("#savings");
+
+//поле ввода "статьи возможного дохода"
+let income = document.querySelector("#savings");
+
+
 let money, time;
 
 function start () { // ввод начальных данных

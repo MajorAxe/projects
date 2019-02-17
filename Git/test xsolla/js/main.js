@@ -12,29 +12,35 @@
     string = document.querySelector("#string");
 
 //события на кнопки
+function writeString(item) {
+        string.value += item.textContent;
+        string.focus();
+}
+
 btnNumber.forEach(function (item) {
     item.addEventListener("click", function() {
-        string.value += item.textContent;
+        writeString(item);
     });
 });
 
 btnSymbol.forEach(function (item) {
     item.addEventListener("click", function() {
-        string.value += item.textContent;
+        writeString(item);
     });
 });
 
 btnOperations.forEach(function (item) {
     item.addEventListener("click", function() {
-        string.value += item.textContent;
+        writeString(item);
     });
 });
 btnOperations[5].addEventListener('click', function() {
     clearString();
 });
 
-//очистка строки
+//функция очистки строки
 function clearString() {
+    string.focus();
     return string.value = 0, result = 0;
 }
 //запрет ввода лишних символов
@@ -60,7 +66,7 @@ function getChar(event) {
 }
 
 //вычисление
-equals.addEventListener('click', function() {
+function showResult () {
     try {
         result = eval(string.value);
     } catch (err) {
@@ -71,4 +77,15 @@ equals.addEventListener('click', function() {
         clearString();
     }
     string.value = String(result);
+}
+
+equals.addEventListener('click', function() {
+    showResult();
+    string.focus();
+});
+
+addEventListener('keydown', function(event) {
+    if (event.keyCode == 13) {
+        showResult();
+    }
 });

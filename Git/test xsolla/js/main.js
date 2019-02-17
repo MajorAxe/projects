@@ -30,10 +30,13 @@ btnOperations.forEach(function (item) {
     });
 });
 btnOperations[5].addEventListener('click', function() {
-    string.value = 0;
-    result = 0;
+    clearString();
 });
 
+//очистка строки
+function clearString() {
+    return string.value = 0, result = 0;
+}
 //запрет ввода лишних символов
 string.onkeypress = function(e) {
 
@@ -57,7 +60,15 @@ function getChar(event) {
 }
 
 //вычисление
-equals = addEventListener('click', function() {
-    result = eval(string.value);
+equals.addEventListener('click', function() {
+    try {
+        result = eval(string.value);
+    } catch (err) {
+        alert("Введены некорректные данные");
+    }
+    if (result == 'Infinity') {
+        alert("Делить на ноль нельзя!");
+        clearString();
+    }
     string.value = String(result);
-})
+});

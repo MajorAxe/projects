@@ -1,34 +1,55 @@
 //кнопки с цифрами
-    let btnNumber = document.querySelectorAll(".number"),
-
+let btnNumber = document.querySelectorAll(".number"),
 //операции
     equals = document.getElementById("equals"),
     btnOperations = document.querySelectorAll(".operations"),
-    
 //знаки
     btnSymbol = document.querySelectorAll(".symbol"),
+    string = document.querySelector("#string"),
 
     result = 0;
-    string = document.querySelector("#string");
-
-//события на кнопки
+//функция передачи содержимого кнопки в строку
 function writeString(item) {
         string.value += item.textContent;
         string.focus();
 }
-
+//функция очистки строки
+function clearString() {
+    string.focus();
+    return string.value = 0, result = 0;
+}
+//функция получения кода 
+function getChar(event) {
+    if (event.which != 0 && event.charCode != 0) {
+        if (event.which < 32) return null;
+        return String.fromCharCode(event.which);
+    }
+    return null;
+}
+//функция вычисления + исключения
+function showResult () {
+    try {
+        result = eval(string.value);
+    } catch (err) {
+        alert("Введены некорректные данные");
+    }
+    if (result == 'Infinity') {
+        alert("Делить на ноль нельзя!");
+        clearString();
+    }
+    string.value = String(result);
+}
+//навешивание событий
 btnNumber.forEach(function (item) {
     item.addEventListener("click", function() {
         writeString(item);
     });
 });
-
 btnSymbol.forEach(function (item) {
     item.addEventListener("click", function() {
         writeString(item);
     });
 });
-
 btnOperations.forEach(function (item) {
     item.addEventListener("click", function() {
         writeString(item);
@@ -37,12 +58,15 @@ btnOperations.forEach(function (item) {
 btnOperations[5].addEventListener('click', function() {
     clearString();
 });
-
-//функция очистки строки
-function clearString() {
+equals.addEventListener('click', function() {
+    showResult();
     string.focus();
-    return string.value = 0, result = 0;
-}
+});
+addEventListener('keydown', function(event) {
+    if (event.keyCode == 13) {
+        showResult();
+    }
+});
 //запрет ввода лишних символов
 string.onkeypress = function(e) {
 
@@ -56,36 +80,3 @@ string.onkeypress = function(e) {
         return false;
     }
   };
-
-function getChar(event) {
-    if (event.which != 0 && event.charCode != 0) {
-        if (event.which < 32) return null;
-        return String.fromCharCode(event.which);
-    }
-    return null;
-}
-
-//вычисление
-function showResult () {
-    try {
-        result = eval(string.value);
-    } catch (err) {
-        alert("Введены некорректные данные");
-    }
-    if (result == 'Infinity') {
-        alert("Делить на ноль нельзя!");
-        clearString();
-    }
-    string.value = String(result);
-}
-
-equals.addEventListener('click', function() {
-    showResult();
-    string.focus();
-});
-
-addEventListener('keydown', function(event) {
-    if (event.keyCode == 13) {
-        showResult();
-    }
-});
